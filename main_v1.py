@@ -17,14 +17,9 @@ def pipeline(img):
         print('Frame:', frame_count)
     if debug:
         for i in range(len(z_box)):
-            img1 = helpers.draw_box_label(img, z_box[i], box_color=(255, 0, 0))
-            #print(frame_count,"inside debug")
+            img1 = helpers.draw_box_label(img, z_box[i], box_color=(255, 0, 0)
             plt.imshow(img1)
             plt.show()
-            #imge=cv2.imread(img1)
-            #print(imge)
-            #cv2.imshow("image",img1)
-        #plt.show(img1)
             return img1
 if __name__ == "__main__":
 
@@ -36,14 +31,9 @@ if __name__ == "__main__":
         for i in range(len(images))[0:7]:
             image = images[i]
             image_box = pipeline(image)
-            cv2.imwrite("C:\\Users\\my3kr\\PycharmProjects\\vehicle_detect\\vehicledetect\\box_images\\frame%d.jpg" % i,image_box)
-            img=cv2.imread("C:\\Users\\my3kr\\PycharmProjects\\vehicle_detect\\vehicledetect\\box_images\\frame%d.jpg" % i)
+            cv2.imwrite("path_output\\frame%d.jpg" % i,image_box)
+            img=cv2.imread("path_output\\frame%d.jpg" % i)
             plt.imshow(img)
             plt.show()
-            print("image process ", i)
-           # if not img is None:
-            #img= cv2.imread(image_box)
-            #cv2.imshow('image',image_box)
-               # plt.imshow(img)
-                #plt.show()
-
+           
+           
