@@ -1,23 +1,12 @@
 '''
 Implement and test car detection (localization)
 '''
-
-#from keras   import vis_utils
 import numpy as np
 import tensorflow as tf
 from PIL import Image
 import os
-#os.chdir('C:\\Users\\my3kr\\PycharmProjects\\vehicle_detect\\models\\object_detection\\utils')
-#from object_detection.utils import visualization_utils as vis_util
-#print(os.path.dirname('C:\\Users\\my3kr\\PycharmProjects\\vehicle_detect\\models\\object_detection'))
-
-#retval = os.getcwd()
-#print(retval)
-os.chdir('C:\\Users\\my3kr\\PycharmProjects\\vehicle_detect\\models')
+os.chdir('path\\models')
 from models.research.object_detection.utils import visualization_utils as vis_utils
-#retval = os.getcwd()
-#print(retval)
-#from .models.research.object_detection.utils import visualization_utils as vis_utils
 from matplotlib import pyplot as plt
 import time
 from glob import glob
@@ -124,7 +113,7 @@ class CarDetector(object):
               scores = np.squeeze(scores)
     
               cls = classes.tolist()
-#********************************************************************************************************************************************************
+
               # The ID for car in COCO data set is 3 
               idx_vec = [i for i, v in enumerate(cls) if ((v==3) and (scores[i]>0.3))]
               
